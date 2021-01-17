@@ -109,7 +109,130 @@ const newsData = `<div class="blog-header">
 
 </div><!-- /.row -->`
 
-const formalitiesData = ``;
+const formalitiesData = `
+<div class="row">
+<div class="col-lg-6">
+<form>
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon1">@</span>
+<input type="text" class="form-control" placeholder="Correo" aria-describedby="basic-addon1">
+</div>
+<div class="input-group">
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Tipo
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Queja</a></li>
+      <li><a href="#">Problematica</a></li>
+      <li><a href="#">Propuesta</a></li>
+      <li><a href="#">Algo</a></li>
+    </ul>
+</div>
+</div>
+
+<input type="date" id="start" name="trip-start"
+value="2018-07-22"
+min="2018-01-01" max="2018-12-31">
+</form>
+
+</div>
+<div class="col-lg-6">
+
+</div>
+<div class="col-lg-6">
+<p><a href="#" class="btn btn-primary" role="button">Enviar</a></p>
+</div>
+`;
+
+
+const incidentsData = `
+<form>
+  <div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+  </div>
+  <div class="input-group">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Incidencia
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Basura</a></li>
+          <li><a href="#">Daños</a></li>
+          <li><a href="#">Hierbas</a></li>
+          <li><a href="#">Otros</a></li>
+        </ul>
+    </div>
+  </div>
+  <iframe id="inlineFrameExample"
+    title="Inline Frame Example"
+    width="600"
+    height="300"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+  </iframe>
+  </div>
+
+  
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+`;
+
+const movilityData =`
+<h2>Guaguas</h2>
+<iframe src="https://www.guaguas.com/lineas/metroguagua%20" width="100%" height="350px"></iframe>
+<h2>Parking</h2>
+ 
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Matricula</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Matrícula">
+  </div>
+  <div class="form-group">
+    <label for="street">Calle</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Calle">
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="dateInit">Inicio</label>
+    <input type="time" id="dateInit" name="appt">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="dateEnd">Fin</label>
+    <input type="time" id="dateEnd" name="appt">
+    </div>
+
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<h2>Taxis</h2>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td><i class="fa fa-user"></i></td>
+      <td>123456789</td>
+      <td><i class="fa fa-check"></i></td>
+    </tr>
+    <tr>
+      <td><i class="fa fa-user"></i></td>
+      <td>123456789</td>
+      <td><i class="fa fa-check"></i></td>
+    </tr>
+    <tr>
+      <td><i class="fa fa-user"></i></td>
+      <td>123456789</td>
+      <td><i class="fa fa-times"></i></td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+const staticsData =`<iframe width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiNDQ3Y2Q1NWItMTFkMi00MzlmLTljNjQtMDc0YzQzODYwODFmIiwidCI6ImIyYmI3MzFjLTQ2MGQtNDIwZi1hNDc1LTNlZDYxNWE4Mjk4NyIsImMiOjh9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>`;
 
 function noticias() {
     removeActive()
@@ -119,20 +242,20 @@ function noticias() {
 function tramites() {
     removeActive()
     active("formalities")
-    updateContainer()
+    //updateContainer()
     updateContainer(formalitiesData)
 }
 function incidencias() {
     removeActive()
     active("incidents")
-    updateContainer()
+    updateContainer(incidentsData)
 
     // sobrescribir el contenido
 }
 function movilidad() {
     removeActive()
     active("movility")
-    updateContainer()
+    updateContainer(movilityData)
 
     // sobrescribir el contenido
 }
@@ -140,7 +263,7 @@ function movilidad() {
 function estadisticas() {
     removeActive()
     active("statistics")
-    updateContainer()
+    updateContainer(staticsData)
 
     // sobrescribir el contenido
 }
